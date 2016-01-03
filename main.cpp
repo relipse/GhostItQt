@@ -32,7 +32,9 @@ int main(int argc, char *argv[])
                  POINT point;
                  GetCursorPos(&point);
                  //hwnd = ChildWindowFromPoint(//WindowFromPoint(*point);
-                 hwnd = ChildWindowFromPoint(GetDesktopWindow(), point); //WindowFromPoint(point);
+                 //hwnd = ChildWindowFromPoint(GetDesktopWindow(), point); //WindowFromPoint(point);
+                 //TODO: use ChildWindowFromPointEx and pass over hidden windows
+                 hwnd = RealChildWindowFromPoint(GetDesktopWindow(), point);
 
                  qDebug() << hwnd;
 
